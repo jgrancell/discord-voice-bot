@@ -19,7 +19,9 @@ jobs:
 
       # Set up Podman
       - name: Set up Podman
-        uses: containers/podman-action@v2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y podman
 
       # Build the container
       - name: Build container image
@@ -37,7 +39,9 @@ jobs:
 
       # Set up Podman
       - name: Set up Podman
-        uses: containers/podman-action@v2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y podman
 
       # Log in to ghcr.io
       - name: Log in to GitHub Container Registry
@@ -66,7 +70,9 @@ jobs:
 
       # Set up Podman
       - name: Set up Podman
-        uses: containers/podman-action@v2
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y podman
 
       # Build the container image for PRs
       - name: Build container image
