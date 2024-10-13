@@ -45,7 +45,7 @@ jobs:
 
       # Log in to ghcr.io
       - name: Log in to GitHub Container Registry
-        run: echo "${{ secrets.GHCR_PAT }}" | podman login ghcr.io -u ${{ github.actor }} --password-stdin
+        run: echo "$GITHUB_TOKEN" | podman login ghcr.io -u ${{ github.actor }} --password-stdin
 
       # Tag and Push the container image
       - name: Tag and push container
